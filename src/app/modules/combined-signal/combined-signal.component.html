@@ -1,0 +1,19 @@
+<h1>
+  Combined Signal
+</h1>
+<hr />
+<button
+  type="button"
+  (click)="addOne()"
+>
+  Add One
+</button>
+<input
+  type="number"
+  placeholder="Input value"
+  [value]="input$()"
+  (input)="updateValue($event)"
+/>
+<div>
+  Sum: {{ sum$() }}
+</div>

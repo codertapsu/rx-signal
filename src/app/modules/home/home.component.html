@@ -1,0 +1,20 @@
+<div class="container">
+  <section>
+    <button
+      type="button"
+      (click)="toggle(1)"
+    >
+      ON/OFF
+    </button>
+    <app-combined-signal *ngIf="isDisplayedSignal"></app-combined-signal>
+  </section>
+  <section>
+    <button
+      type="button"
+      (click)="toggle(2)"
+    >
+      ON/OFF
+    </button>
+    <app-combined-rx *ngIf="isDisplayedRx"></app-combined-rx>
+  </section>
+</div>

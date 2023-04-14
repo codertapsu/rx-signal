@@ -1,0 +1,13 @@
+.container {
+  padding: 10px;
+
+  section {
+    padding: 10px;
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+  }
+
+  section + section {
+    margin-top: 10px;
+  }
+}
