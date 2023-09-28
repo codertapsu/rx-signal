@@ -1,0 +1,16 @@
+table {
+  table-layout: auto;
+  border-collapse: collapse;
+
+  caption {
+    font-size: large;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+  }
+}

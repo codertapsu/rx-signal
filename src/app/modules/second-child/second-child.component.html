@@ -6,5 +6,10 @@
   From second child
 </button>
 
+<div>
+  {{ user.info.name }}
+</div>
 <hr />
-<app-fancy-button></app-fancy-button>
+<app-fancy-button [name]="user.info.name"></app-fancy-button>
+
+<ng-content />

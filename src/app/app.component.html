@@ -1,4 +1,122 @@
 <div>
   <router-outlet></router-outlet>
   <ng-container *ngIf="checked()"></ng-container>
+  <!-- <section>
+    <table>
+      <caption>
+        Existing flags
+      </caption>
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Label
+          </th>
+          <th>
+            Enabled
+          </th>
+          <th>
+            Description
+          </th>
+          <th>
+            Key
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of flags">
+          <td>
+            {{ item.value.displayName || item.label }}
+          </td>
+          <td>
+            {{ item.label }}
+          </td>
+          <td>
+            <input
+              type="checkbox"
+              readonly
+              [checked]="item.value.enabled"
+            >
+          </td>
+          <td>
+            {{ item.value.description }}
+          </td>
+          <td>
+            {{ item.key }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <br />
+  <hr />
+  <br />
+  <section>
+    <form
+      [formGroup]="flagForm"
+      (ngSubmit)="createFlag()"
+    >
+      <label>
+        <span>
+          Name
+        </span>
+        <input
+          type="text"
+          formControlName="name"
+        />
+      </label>
+      <label>
+        <span>
+          Key
+        </span>
+        <input
+          type="text"
+          formControlName="key"
+        />
+      </label>
+      <label>
+        <span>
+          Label
+        </span>
+        <input
+          type="text"
+          formControlName="label"
+        />
+      </label>
+      <label>
+        <span>
+          Description
+        </span>
+        <input
+          type="text"
+          formControlName="description"
+        />
+      </label>
+      <label>
+        <span>
+          Enable
+        </span>
+        <input
+          type="checkbox"
+          formControlName="enable"
+        />
+      </label>
+      <button type="submit">
+        Create flag
+      </button>
+    </form>
+  </section>
+  <br />
+  <hr />
+  <br />
+  <section>
+    <button
+      type="button"
+      (click)="getFlags()"
+    >
+      Refresh
+    </button>
+  </section> -->
 </div>

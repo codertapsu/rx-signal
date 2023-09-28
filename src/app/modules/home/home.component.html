@@ -1,3 +1,4 @@
+<ng-container *ngIf="checked()"></ng-container>
 <div class="container">
   <section>
     <button
@@ -6,7 +7,69 @@
     >
       ON/OFF
     </button>
+    <input
+      type="text"
+      [(ngModel)]="user.name"
+    />
+    <button
+      type="button"
+      (click)="reassign()"
+    >
+      Reassign
+    </button>
+    <button
+      type="button"
+      (click)="detach()"
+    >
+      Detach
+    </button>
+    <button
+      type="button"
+      (click)="reattach()"
+    >
+      Reattach
+    </button>
+    <button
+      type="button"
+      (click)="detectChanges()"
+    >
+      Detect Changes
+    </button>
+    <button
+      type="button"
+      (click)="markForCheck()"
+    >
+      Mark For Check
+    </button>
+    <button
+    type="button"
+    (click)="appTick()"
+  >
+    App tick
+  </button>
+    <button
+      #noopBtn
+      type="button"
+    >
+      Noop button
+    </button>
+    <div>
+      {{ counter() }}
+    </div>
+
+    <div>Outside Counter: {{counterOutside}}</div>
+
     <app-combined-signal *ngIf="isDisplayedSignal"></app-combined-signal>
+    <app-first-child
+      [user]="user"
+      (kick)="doCustomEvent($event)"
+    ></app-first-child>
+    <hr />
+    <div>
+      <pre>
+      {{ user | json }}
+      </pre>
+    </div>
   </section>
   <section>
     <button
@@ -16,5 +79,6 @@
       ON/OFF
     </button>
     <app-combined-rx *ngIf="isDisplayedRx"></app-combined-rx>
+    <app-second-child></app-second-child>
   </section>
 </div>

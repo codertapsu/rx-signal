@@ -2,6 +2,32 @@
 <h1>
   First child
 </h1>
-<button type="button" (click)="loud()">
+<div>
+  <pre>
+  {{ user | json }}
+  </pre>
+</div>
+<button
+  type="button"
+  (click)="detectChanges()"
+>
+  Detect Changes
+</button>
+<button
+  type="button"
+  (click)="markForCheck()"
+>
+  Mark For Check
+</button>
+<button
+  type="button"
+  (click)="loud()"
+>
   From first child
+</button>
+<button
+  type="button"
+  (click)="triggerCustomEvent()"
+>
+  Trigger custom event
 </button>

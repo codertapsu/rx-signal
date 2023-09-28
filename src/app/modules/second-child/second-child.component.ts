@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 
 import { FancyButtonComponent } from '../fancy-button/fancy-button.component';
 
@@ -11,9 +11,32 @@ import { FancyButtonComponent } from '../fancy-button/fancy-button.component';
   standalone: true,
   imports: [CommonModule, FancyButtonComponent],
 })
-export class SecondChildComponent {
+export class SecondChildComponent implements OnInit {
+  private readonly _changeDetectorRef = inject(ChangeDetectorRef);
+  public user = {
+    info: {
+      name: 'Khanh'
+    }
+  };
   public loud(): void {
     console.log('Clicked from Second component');
+    // this.name = 'Test2';
+    this.user.info.name = 'Vuong';
+    this._changeDetectorRef.detectChanges();
+  }
+
+  public ngAfterViewChecked(): void {
+    console.log('SecondChildComponent CD performed');
+  }
+
+  public ngDoCheck(): void {
+    console.log('SecondChildComponent DoCheck');
+  }
+  
+  public ngOnInit(): void {
+    console.log('Second ngOnInit');
+    
+    // this._changeDetectorRef.detectChanges();
   }
 
   public checked(): boolean {

@@ -1,19 +1,20 @@
+<ng-container *ngIf="checked()"></ng-container>
 <h1>
   Combined Rx
 </h1>
 <hr />
 <button
   type="button"
-  (click)="addOne()"
+  (click)="addOne($event)"
 >
   Add One
 </button>
-<input
+<!-- <input
   type="number"
   placeholder="Input value"
   [value]="input$ | async"
   (input)="updateValue($event)"
-/>
+/> -->
 <div>
   Sum: {{ sum$ | async }}
 </div>
